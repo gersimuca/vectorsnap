@@ -1,7 +1,6 @@
 import { useCallback } from "react";
 import { type ChangeEvent, useState } from "react";
 import { useClipBoardPaste } from "./useClipBoardPaste";
-import { resolve } from "path";
 
 const parseSvgFile = (content: string, fileName: string) => {
     const parser = new DOMParser();
