@@ -104,7 +104,7 @@ export const useFileUploader = (): FileUploadResult => {
         acceptedFileTypes: ["image/*", ".jpg", ".jpeg", ".png", ".webp", ".svg"],
     });
 
-    const cancle = () => {
+    const cancel = () => {
         setImageContent("");
         setImageMetadata(null);
     }
@@ -115,6 +115,6 @@ export const useFileUploader = (): FileUploadResult => {
         imageMetadata,
         handleFileUpload: processFile,
         handleFileUploadEvent,
-        cancel: cancle,
+        cancel,
     };
 };
