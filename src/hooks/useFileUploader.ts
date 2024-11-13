@@ -1,7 +1,6 @@
 import { useCallback } from "react";
 import { type ChangeEvent, useState } from "react";
 import { useClipBoardPaste } from "./useClipBoardPaste";
-import { resolve } from "path";
 
 const parseSvgFile = (content: string, fileName: string) => {
     const parser = new DOMParser();
@@ -104,7 +103,7 @@ export const useFileUploader = (): FileUploadResult => {
         acceptedFileTypes: ["image/*", ".jpg", ".jpeg", ".png", ".webp", ".svg"],
     });
 
-    const cancle = () => {
+    const cancel = () => {
         setImageContent("");
         setImageMetadata(null);
     }
@@ -115,6 +114,6 @@ export const useFileUploader = (): FileUploadResult => {
         imageMetadata,
         handleFileUpload: processFile,
         handleFileUploadEvent,
-        cancel: cancle,
+        cancel,
     };
 };
